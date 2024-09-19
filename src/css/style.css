@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    --Score-Color: #ffff;
+    --Message-Color: #ffff;
+    --Paddle-Color: #000000;
+    --Ball-Color: #000000;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+
+    background: black;
+    background-image: radial-gradient(white 1px, transparent 0);
+    background-size: 40px 40px;
+    background-position: -19px -19px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board {
+    transition: cubic-bezier(0.19, 1, 0.22, 1);
+    height: 85vh;
+    width: 80vw;
+    background-image: linear-gradient(
+            to right, #5c6e91, #839b97);
+    border-radius: 14px;
+    border: #ffffff solid 1px;
+}
+
+.ball {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: var(--Ball-Color);
+    position: fixed;
+    top: calc(50% - 15px);
+    left: calc(50% - 15px);
+}
+
+.paddle {
+    transition: cubic-bezier(0.19, 1, 0.22, 1);
+    height: 100px;
+    width: 18px;
+    border-radius: 10px;
+    position: fixed;
+}
+
+.paddle1 {
+    top: calc(7.5vh + 55px);
+    left: calc(10vw + 30px);
+    background-color: var(--Paddle-Color);
+}
+
+.paddle2 {
+    top: calc(85vh + 7.5vh - 100px - 55px);
+    right: calc(10vw + 30px);
+    background-color: var(--Paddle-Color);
+}
+
+.player_1_score {
+    height: 50px;
+    width: 50px;
+    color: var(--Score-Color);
+    position: fixed;
+    left: 30vw;
+    margin-top: 30px;
+}
+
+.player_2_score {
+    height: 50px;
+    width: 50px;
+    color: var(--Score-Color);
+    position: fixed;
+    left: 70vw;
+    margin-top: 30px;
+}
+
+.message {
+    position: fixed;
+    height: 10vh;
+    width: 30vw;
+    color: var(--Message-Color);
+    left: 38vw;
+    bottom: 10vh;
+    text-align: center;
+    margin: 30px auto auto auto;
+}
